@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salwa Shaumma Nurhaliza | Portofolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f0f0f;
+      color: #00ffe7;
+    }
+
+    header {
+      background: radial-gradient(circle at center, #1f0036, #000);
+      padding: 3rem;
+      text-align: center;
+      border-bottom: 2px solid #ff00cc;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      background: linear-gradient(90deg, #ff00cc, #00ffe7);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: #00ffe7;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00cc;
+    }
+
+    .section {
+      padding: 2rem;
+      border-top: 1px solid #333;
+    }
+
+    .card {
+      background-color: #1a1a2e;
+      padding: 1.5rem;
+      margin: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff00cc;
+      cursor: pointer;
+      width: 300px;
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      border-top: 2px solid #ff00cc;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #00ffe7;
+    }
+
+    /* Modal Style */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      background-color: #1a1a2e;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 80%;
+      color: #00ffe7;
+      box-shadow: 0 0 20px #ff00cc;
+      position: relative;
+    }
+
+    .close {
+      color: #ff00cc;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal img {
+      margin-top: 1rem;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Salwa Shaumma Nurhaliza</h1>
+    <p>💾 Undergraduate Statistics Student | Business Intelligence | Data Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="section" id="about">
+    <h2>👩‍💻 About Me</h2>
+    <p>Hi! I'm Salwa, a final-year statistics student who loves diving into data and turning numbers into stories. I blend technical skill with aesthetic dashboards to solve real-world problems.</p>
+  </div>
+
+  <div class="section" id="projects">
+    <h2>🌐 My Projects</h2>
+    <div class="gallery">
+      <div class="card" onclick="openModal('modal1')">
+        <h3>📊 Clustering Settlement Quality in Indonesia</h3>
+        <img src="Clustering.png" alt="Clustering Project Preview">
+        <p>Click to view more!</p>
+      </div>
+
+      <div class="card" onclick="openModal('modal2')">
+        <h3>📈 Experimental Design & ANOVA in R</h3>
+        <img src="Anova.png" alt="ANOVA Project Preview">
+        <p>Click to view more!</p>
+      </div>
+
+      <div class="card" onclick="openModal('modal3')">
+        <h3>📉 Forecasting Demand with Holt-Winters</h3>
+        <img src="HWinter.png" alt="Forecasting Project Preview">
+        <p>Click to view more!</p>
+      </div>
+
+      <div class="card" onclick="openModal('modal4')">
+        <h3>🍱 Food Detection Using YOLOv5</h3>
+        <img src="ADI.png" alt="YOLOv5 Food Detection">
+        <p>Click to view more!</p>
+      </div>
+
+      <div class="card" onclick="openModal('modal5')">
+        <h3>🧠 Sentiment Analysis of Online Gambling</h3>
+        <img src="ADDW2.png" alt="Sentiment Analysis Project">
+        <p>Click to view more!</p>
+      </div>
+
+      <div class="card" onclick="openModal('modal6')">
+        <h3>🎨 Infographic Design</h3>
+        <img src="INFO.png" alt="Infographic Portfolio">
+        <p>Click to view more!</p>
+      </div>
+
+      <div class="card" onclick="openModal('modal7')">
+        <h3>🌍 Spatial Regression (GWR)</h3>
+        <img src="GWR.png" alt="GWR Spatial Analysis">
+        <p>Click to view more!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>📊 Customer Segmentation</h2>
+      <p>My first scientific article was published on 11th September 2023. This project evaluates indicators of settlement quality, sanitation and water access across various provinces in Indonesia in 2023. The method focuses on comparing hierarchical and non-hierarchical clustering, using R Studio software for the analysis.</p>
+      <img src="detail-segmentation.png" alt="Detailed View">
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>📈 Experimental Design & ANOVA in R</h2>I used R for decision-making in experimental design, especially in analyzing how different factors interact in a controlled study. With R, I conducted ANOVA (Analysis of Variance) to test which variables had significant effects, and used visual tools like interaction plots to see how combinations of factors influenced outcomes.For instance, in a simulated case study on legal decision-making, I explored how jurors’ confidence was affected by different verdict types (guilty, not guilty, not proven) and conflicting testimonial evidence. Using R, I could break down the results by group, test for statistical significance, and visualize trends, helping me draw strong, data-driven conclusions.Interactive dashboard built with Power BI. Tracks ROI, CTR, impressions, and cost breakdown. Designed with a dark theme for internal stakeholders.</p>
+      <img src="detail-ANOVA.png" alt="Detailed View">
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>📈 Forecasting demand in Python(Holt Winter Method)</h2>I developed a quarterly demand forecast for the 2025–2030 period using the Holt-Winters exponential smoothing method. The model captured both trend and seasonality patterns in historical data. With a MAPE (Mean Absolute Percentage Error) of 7.06%, the model demonstrated high accuracy, making it suitable for medium-term business planning and inventory decisions. Visualization and model evaluation were done using Python libraries such as statsmodels, pandas, and matplotlib.</p>
+      <p><a href="https://colab.research.google.com/drive/1N_wfXh8wMGkoqVnJOKw5F_f_5_hdrYhF?usp=sharing" target="_blank" style="color: #00ffe7; font-weight: bold;">🔗 View Code on Google Colab</a></p>
+      <img src="forecasting.png" alt="Detailed View">
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2>📈 Food Detection using Yol0v5 (Computer Vision Project)</h2>This project aimed to compare the performance of multiple YOLOv5 model variants — YOLOv5s, YOLOv5m, YOLOv5n, and YOLOv5x — in detecting everyday food items. The dataset consisted of 223 images collected from online sources, which underwent preprocessing, model training, image detection, and evaluation stages. The experiment used a clear split for training, validation, and testing. Results showed that YOLOv5s achieved the fastest training time and the highest mAP@0.5 score of 0.848, indicating a strong balance between speed and accuracy for lightweight food detection applications.</p>
+      <p><a href="https://colab.research.google.com/drive/1PdNU5jeenXgK28VN9DBGUikeeYU-dZgA?usp=sharing" target="_blank" style="color: #00ffe7; font-weight: bold;">🔗 View Code on Google Colab</a></p>
+      <img src="food.png" alt="Detailed View">
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal">
+   <div class="modal-content">
+     <span class="close" onclick="closeModal('modal5')">&times;</span>
+     <h2>📈 Sentiment Analysis on Online Gambling Discussions using Chi-Square and Time Series</h2>
+     <p>This project analyzed public sentiment toward online gambling (judi online) on platform X (formerly Twitter). Using text preprocessing techniques and a Chi-Square statistical method, we selected key features that influenced sentiment classification. Tweets were categorized into positive, negative, and neutral sentiments.</p>
+     <p>In addition, we applied time series analysis to observe the trend of each sentiment category over time. The model revealed important shifts in public perception — including spikes in negative sentiment following regulatory events.</p>
+     <p><a href="https://colab.research.google.com/drive/1CJ8dADc-3fJZ9KiKtrd8RMaDHyFSCwoT?usp=sharing" target="_blank" style="color: #00ffe7; font-weight: bold;">🔗 View Code on Google Colab</a></p>
+     <img src="ADDW.png" alt="Text Classification">
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal">
+   <div class="modal-content">
+     <span class="close" onclick="closeModal('modal6')">&times;</span>
+     <h2>📈 Infographic Projects</h2>
+     <p> Some infographic works that i created for competitions & university projects. i Combined my imagination with statistical data visualization </p>
+     <img src="Infographics.png" alt="Infographics projects">
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal7" class="modal">
+   <div class="modal-content">
+     <span class="close" onclick="closeModal('modal7')">&times;</span>
+     <h2>📈 </h2>
+     <p> This project analyzes the influence of socio-economic factors on the number of active online loan users across 34 Indonesian provinces. Using Geographically Weighted Regression (GWR), it was found that unemployment affects 85.29% of provinces and average monthly expenditure affects 50%, highlighting the spatial variation in loan dependency across the country. </p>
+     <img src="GWR.png" alt="Online Loans users total">
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>📬 Contact</h2>
+    <p>Email: salwashalizaa@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/salwa-shaumma-nurhaliza/" target="_blank">@salwashaumma</a></p>
+  </div>
+
+  <footer>
+    © 2025 Salwa Shaumma Nurhaliza. All rights reserved.
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      ['modal1', 'modal2', 'modal3', 'modal4', 'modal5', 'modal6', 'modal7'].forEach(id => {
+        const modal = document.getElementById(id);
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+  </script>
+</body>
+</html>
