@@ -71,12 +71,23 @@
       box-shadow: 0 0 10px #ff00cc;
       cursor: pointer;
       width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 480px; 
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
     }
 
     .card img {
       max-width: 100%;
+      height: auto;
       border-radius: 8px;
-      margin-top: 1rem;
+      object-fit: contain;
+      flex-grow: 1;
     }
 
     .gallery {
@@ -84,6 +95,7 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
+      align-items: stretch; /* <- ini penting */
     }
 
     footer {
@@ -137,6 +149,21 @@
       max-width: 100%;
       border-radius: 8px;
     }
+
+    a.btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    
+    a.btn:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -153,9 +180,16 @@
 
   <div class="section" id="about">
     <h2>👩‍💻 About Me</h2>
-    <p>Hi! I'm Salwa, a final-year statistics student who loves diving into data and turning numbers into stories. I blend technical skill with aesthetic dashboards to solve real-world problems.</p>
+     <p>I am a final-year Statistics student with a strong passion for data-driven solutions, particularly in the areas of social responsibility and sustainability. My academic journey and applied experiences have equipped me with a solid foundation in data analysis and research.</p>
+    <p> I’ve worked across various domains—including computer visionand social impact evaluation—handling everything from unstructured data cleaning to image-based modeling. I’m proficient in Microsoft Excel, Rstudio, PowerBI, Tableau, SQL, and Python, and I thrive in transforming complex, messy datasets into clear, actionable insights.</p> 
   </div>
 
+    <!-- Tombol Download CV -->
+  <a href="CV_Salwa Shaumma Nurhaliza.pdf" download class="btn btn-primary" style="margin-top: 12px;">
+    📄 Download CV
+  </a>
+</section>
+  
   <div class="section" id="projects">
     <h2>🌐 My Projects</h2>
     <div class="gallery">
